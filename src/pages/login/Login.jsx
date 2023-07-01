@@ -47,9 +47,16 @@ import CustomerService from "../../service/CustomerService";
 
      CustomerService.login(obj).then(
       res=>{
-        console.log(res)
-      }
-     )
+            
+               navigate("user")
+               sessionStorage.setItem("log",JSON.stringify(res.data))
+            
+      })
+      .catch((error)=>{
+        window.alert("Invalid Credential")
+      })
+
+     
       
        
      

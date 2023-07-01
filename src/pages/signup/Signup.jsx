@@ -70,9 +70,11 @@ const Signup=()=>
 
         CustomerService.signup(obj).then(
           res=>{
-            console.log(res)
+            window.alert("Account Created")
           }
-        )
+        ).catch((error)=>{
+          window.alert("Something went wrong")
+        })
 
         //console.log(obj)
 
@@ -102,11 +104,11 @@ const Signup=()=>
        <div>
       <form onSubmit={handleSubmit}>
       <div >
-          <input style={{padding:'10px'}} className="form-control"  type="email" value={email} onChange={handleUserNameChange} placeholder="Username" />
+          <input style={{padding:'10px'}} className="form-control"  type="text" value={username} onChange={handleUserNameChange} placeholder="Username" />
         </div>
         
         <div style={{paddingTop:'20px'}}>
-          <input style={{padding:'10px'}} className="form-control"  type="text" value={username} onChange={handleEmailChange} placeholder="Email"/>
+          <input style={{padding:'10px'}} className="form-control"  type="email" value={email} onChange={handleEmailChange} placeholder="Email"/>
         </div>
         <div style={{paddingTop:'20px'}}>
           <input style={{padding:'10px'}} className="form-control" type="password" value={password} onChange={handlePasswordChange} placeholder="Password"/>

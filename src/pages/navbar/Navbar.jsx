@@ -14,7 +14,7 @@ import {MdFastfood} from "react-icons/md";
         <div style={{marginLeft:'60px',height:'100%',display:'flex',alignItems:"center"}}>
         <MdFastfood size={'18pt'} style={{marginRight:'10px'}}/>
 
-          <span style={{fontSize:"2rem"}}>FoodKart</span>
+          <span style={{fontSize:"2rem"}}>CafeBean</span>
         </div>
         <button className="navbar-toggler" style={{float:'right'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 

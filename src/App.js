@@ -6,8 +6,10 @@ import InvalidPage from "../src/pages/invalid-page/InvalidPage";
 import Login from "../src/pages/login/Login";
 import Signup from "../src/pages/signup/Signup";
 import TablePage from './component/user/TablePage';
-import PlaceOrder from './component/user/PlaceOrder';
 import UserDashboard from './component/user/UserDashboard';
+import CoffeeList from './component/user/CoffeeList';
+import BookingProvider from './context/BookingProvider';
+import RecentVisits from './component/user/RecentVisits';
 function App() {
   return (
     <div className="App">
@@ -21,8 +23,10 @@ function App() {
 <Route path="/signup" element={<Signup/>}/>
 
 <Route path="/user" element={<UserDashboard/>}>
-  <Route index element={<TablePage/>}/>
-  <Route path="place-order" element={<PlaceOrder/>}/>
+  <Route index element={<BookingProvider><TablePage/></BookingProvider>}/>
+  <Route path='coffee' element={<BookingProvider><CoffeeList/></BookingProvider>}/>
+  <Route path="recentVisits" element={<RecentVisits/>}/>
+
 </Route>
        
 
