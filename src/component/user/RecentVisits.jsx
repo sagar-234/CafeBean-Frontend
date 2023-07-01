@@ -9,7 +9,7 @@ const RecentVisits=()=>{
     const getAllVisits=()=>{
         BookingService.getBookingByUserid(Number(JSON.parse(sessionStorage.getItem('log')).cust_id)).then(
             res=>{
-                setVisits(res.data)
+                setVisits(res.data.reverse())
             }
         )
     }

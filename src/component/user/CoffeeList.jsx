@@ -59,6 +59,7 @@ const CoffeeList=()=>{
     const confirmOrder=()=>{
      BookingService.addBooking(value).then(
       res=>{
+        window.alert("Booking Confirmed")
         setCoffeeItem([])
       }
      ).catch((error)=>{
