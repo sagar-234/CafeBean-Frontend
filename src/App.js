@@ -10,6 +10,10 @@ import UserDashboard from './component/user/UserDashboard';
 import CoffeeList from './component/user/CoffeeList';
 import BookingProvider from './context/BookingProvider';
 import RecentVisits from './component/user/RecentVisits';
+import AdminDashboard from './component/admin/AdminDashboard';
+import TableForm from './component/admin/TableForm';
+import CoffeeForm from './component/admin/CoffeeForm';
+import Bookings from './component/admin/Bookings';
 function App() {
   return (
     <div className="App">
@@ -29,7 +33,14 @@ function App() {
 
 </Route>
        
+<Route path="/admin" element={<AdminDashboard/>}>
+<Route index element={<CoffeeForm/>}/>
+<Route path="tableform" element={<TableForm/>}/>
+<Route path="bookings" element={<Bookings/>}/>
 
+
+
+</Route>
 
 
 
