@@ -45,9 +45,7 @@ import {MdFastfood} from "react-icons/md";
             </Link>
             <div className="dropdown-menu" style={{ textAlign: 'center', padding: '10%',listStyle:'none',margin:'auto' ,fontSize:'14px'}} aria-labelledby="navbarDropdown">
               <ul style={{listStyle:'none'}}> {/* Wrap the <li> elements inside a <ul> */}
-                <li className="nav-item">
-                  <Link className="nav-link" to={'/user/account/'}>Account</Link>
-                </li>
+                
                 
                 <li className="nav-item"><Link className="nav-link" onClick={logOut} to="/" style={{height:'100%',display:'flex',alignItems:"center"}}>Logout <AiOutlineLogout/></Link>
                 </li>
