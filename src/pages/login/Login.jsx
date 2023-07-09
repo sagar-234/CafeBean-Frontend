@@ -85,10 +85,19 @@ import CustomerService from "../../service/CustomerService";
     <div>
     <Navbar/>
 
-   <div className="container-fluid">
+   <div className="container-fluid" > 
    </div>
 
-    <div className="card-body"  >
+    <div className="card-body" 
+    style={{
+      height: "300px",
+      minHeight: "300px",
+       // Replace with your actual image path
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+    }} >
+
       <form onSubmit={handleSubmit} style={{height:'300px',minHeight:'300px'}} >
         <div>
           <input style={{padding:'10px'}} className="form-control" type="email" value={email} onChange={handleEmailChange} placeholder="Email"/>
@@ -101,7 +110,7 @@ import CustomerService from "../../service/CustomerService";
         {message && <p className="message text-danger">{message}</p>}
 
 
-        <Link to="signup" className="link-primary link-underline-light">New to the FoodKart ? Signup</Link>
+        <Link to="signup" className="link-primary link-underline-light">New to the CafeBean ? Signup</Link>
 
       </form>
 

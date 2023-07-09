@@ -98,7 +98,7 @@ const Signup=()=>
     <div>
                 <Navbar/>
 
-      <div className="container-fluid">
+      <div className="container-fluid" style={{backgroundImage:"url("+"https://wallpaperaccess.com/full/2389930.jpg"+")"}}>
 
       </div>
        <div>

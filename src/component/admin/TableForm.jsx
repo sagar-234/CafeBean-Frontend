@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CafeTableService from '../../service/CafeTableService';
+import {CiEdit} from 'react-icons/ci';
+import {RiDeleteBin6Line} from 'react-icons/ri';
+import { Form } from 'react-bootstrap';
+
 
 const TableForm = () => {
 
@@ -87,20 +91,20 @@ const TableForm = () => {
   return (
     <div className='container'>
       <h2>{editMode ? 'Update Table' : 'Add Table'}</h2>
-      <form onSubmit={handleSubmit} style={{marginTop:'0px',marginBottom:'0px',height:'150px'}}>
+      <Form onSubmit={handleSubmit} style={{marginTop:'0px',marginBottom:'0px',height:'150px'}}>
         {editMode ? (
-          <label>
+          <Form.Label className='form-control'>
             Table ID:
             <input
               type="text"
               name="tableId"
-              value={formData.tableId}
+              value={ formData.tableId}
               onChange={handleChange}
               readOnly
             />
-          </label>
+          </Form.Label>
         ) : null}
-        <label>
+        <Form.Label>
           Seating Capacity:
           <input
             type="number"
@@ -108,9 +112,9 @@ const TableForm = () => {
             value={formData.seatingCapacity}
             onChange={handleChange}
           />
-        </label>
-        <button type="submit">{editMode ? 'Update' : 'Add'}</button>
-      </form>
+        </Form.Label>
+        <button className='btn btn-warning' type="submit">{editMode ? 'Update' : 'Add'}</button>
+      </Form>
       {editMode && (
         <button onClick={() => setEditMode(false)}>Cancel</button>
       )}
@@ -123,8 +127,8 @@ const TableForm = () => {
                   <div className="card-body " >
                     <h6 className="card-title">Table No:{t.tableId}</h6>
                     <p className="text-muted">Seating Capacity :{t.seatingCapacity}</p>
-                    <button onClick={() => handleEdit(t)}>Edit</button>
-                    <button onClick={() => handleDelete(t)}>Delete</button>
+                    <button className='btn btn-info mx-2' onClick={() => handleEdit(t)}>Edit <CiEdit/></button>
+                    <button className='btn btn-danger' onClick={() => handleDelete(t)}>Delete <RiDeleteBin6Line /></button>
 
 
                   </div>

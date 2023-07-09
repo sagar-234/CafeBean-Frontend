@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CoffeeService from '../../service/CoffeeService';
+import { Form } from 'react-bootstrap';
+import {CiEdit} from 'react-icons/ci';
+import {RiDeleteBin6Line} from 'react-icons/ri';
+import {BsCurrencyRupee} from "react-icons/bs";
 
 const CoffeeForm = () => {
   const [formData, setFormData] = useState({
@@ -87,10 +91,10 @@ const CoffeeForm = () => {
   return (
     <div>
       <h2>{editMode ? 'Update Coffee' : 'Add Coffee'}</h2>
-      <form onSubmit={handleSubmit} style={{marginTop:'0px',marginBottom:'0px',height:'150px'}}>
+      <Form onSubmit={handleSubmit} style={{marginTop:'0px',marginBottom:'0px',height:'200px'}}>
         {editMode ? (
-          <label>
-            Coffee ID:
+          <Form.Label>
+            Coffee ID: 
             <input
               type="text"
               name="coffee_id"
@@ -98,9 +102,9 @@ const CoffeeForm = () => {
               onChange={handleChange}
               readOnly
             />
-          </label>
+          </Form.Label>
         ) : null}
-        <label>
+        <Form.Label>
           Coffee Type:
           <input
             type="text"
@@ -108,8 +112,8 @@ const CoffeeForm = () => {
             value={formData.coffee_type}
             onChange={handleChange}
           />
-        </label>
-        <label>
+        </Form.Label>
+        <Form.Label>
           Price:
           <input
             type="number"
@@ -117,9 +121,10 @@ const CoffeeForm = () => {
             value={formData.price}
             onChange={handleChange}
           />
-        </label>
-        <button type="submit">{editMode ? 'Update' : 'Add'}</button>
-      </form>
+        </Form.Label>
+        <br />
+        <button type="submit" className='btn btn-warning mt-3'>{editMode ? 'Update' : 'Add'}</button>
+      </Form>
       {editMode && (
         <button onClick={() => setEditMode(false)}>Cancel</button>
       )}
@@ -130,12 +135,16 @@ const CoffeeForm = () => {
             <div key={t.tableId} className="col-lg-3 col-md-4 mb-4" >
                 <div className="card h-100" >
                   <div className="card-body " >
-                    <h6 className="card-title">Coffee ID:{t.coffee_id}</h6>
-                    <p className="text-muted">Name :{t.coffee_type}</p>
-                    <p className="text-muted">Name :{t.price}</p>
+                    <h3 className="card-title">{t.coffee_id}</h3>
+                    <p className="text-muted"><h4>{t.coffee_type}</h4></p>
+                    <p className="text-muted"><BsCurrencyRupee /> {t.price}</p>
 
-                    <button onClick={() => handleEdit(t)}>Edit</button>
-                    <button onClick={() => handleDelete(t)}>Delete</button>
+                    <button className='btn btn-info mx-2' onClick={() => handleEdit(t)}>
+                      Edit <CiEdit /> 
+                    </button>
+                    <button className='btn btn-danger' onClick={() => handleDelete(t)}>
+
+                    Delete <RiDeleteBin6Line /> </button>
 
 
                   </div>
